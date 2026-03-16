@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap');
+
+@layer base {
+  :root {
+    --background: 250 20% 6%;
+    --foreground: 45 100% 96%;
+
+    --card: 250 18% 10%;
+    --card-foreground: 45 100% 96%;
+
+    --popover: 250 18% 10%;
+    --popover-foreground: 45 100% 96%;
+
+    --primary: 45 100% 55%;
+    --primary-foreground: 250 20% 6%;
+
+    --secondary: 250 15% 16%;
+    --secondary-foreground: 45 100% 96%;
+
+    --muted: 250 15% 14%;
+    --muted-foreground: 250 10% 55%;
+
+    --accent: 30 100% 60%;
+    --accent-foreground: 250 20% 6%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 250 15% 18%;
+    --input: 250 15% 18%;
+    --ring: 45 100% 55%;
+
+    --radius: 1rem;
+
+    --reward-glow: 45 100% 55%;
+    --reward-shimmer: linear-gradient(135deg, hsl(45 100% 55%), hsl(30 100% 60%), hsl(45 100% 55%));
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Outfit', sans-serif;
+  }
+}
+
+@layer components {
+  .reward-glow {
+    box-shadow: 0 0 60px -10px hsl(var(--reward-glow) / 0.4),
+                0 0 120px -20px hsl(var(--reward-glow) / 0.2);
+  }
+  .reward-glow-strong {
+    box-shadow: 0 0 80px -5px hsl(var(--reward-glow) / 0.6),
+                0 0 160px -20px hsl(var(--reward-glow) / 0.3);
+  }
+  .shimmer-text {
+    background: var(--reward-shimmer);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% auto;
+    animation: shimmer 3s linear infinite;
+  }
+}
+
+@keyframes shimmer {
+  to { background-position: 200% center; }
+}
