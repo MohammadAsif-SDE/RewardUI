@@ -1,4 +1,4 @@
-# Welcome to your reward project
+# Reward UI
 
 <img width="1775" height="1112" alt="image" src="./rewardui.gif" />
 
